@@ -29,3 +29,11 @@ run/sqrt:
 .PHONY: build/sqrt
 build/sqrt:
 	@go build -o ./bin/sqrt ./Sqrt/main.go
+
+.PHONY: run/rot13reader
+run/rot13reader:
+	@go run ./Rot13reader/main.go
+	
+.PHONY: build/rot13reader
+build/rot13reader:
+	@go build -o ./bin/rot13reader ./Rot13reader/main.go
