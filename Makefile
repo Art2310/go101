@@ -37,3 +37,11 @@ run/rot13reader:
 .PHONY: build/rot13reader
 build/rot13reader:
 	@go build -o ./bin/rot13reader ./Rot13reader/main.go
+
+.PHONY: run/webcrawler
+run/webcrawler:
+	@go run ./Webcrawler/main.go
+	
+.PHONY: build/webcrawler
+build/webcrawler:
+	@go build -o ./bin/webcrawler ./Webcrawler/main.go
