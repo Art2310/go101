@@ -24,7 +24,7 @@ func (c URLChecker) URLCheck(url string) bool {
 	// Lock so only one goroutine at a time can access the map c.v.
 	defer c.mu.Unlock()
 
-	if c.v[url] == false {
+	if !c.v[url] {
 		c.v[url] = true
 		return true
 	} else {
@@ -53,7 +53,6 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 	for _, u := range urls {
 		go Crawl(u, depth-1, fetcher)
 	}
-	return
 }
 
 func main() {
